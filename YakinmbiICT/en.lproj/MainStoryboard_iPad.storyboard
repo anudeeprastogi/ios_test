@@ -15,7 +15,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="165" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xk9-zA-Qml">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="916" id="LH4-f5-YR5"/>
+                                    <constraint firstAttribute="height" constant="806" id="O1f-T2-jCp"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomCell" rowHeight="166" id="pk1-qY-BLY" customClass="CustomCell">
@@ -269,21 +269,91 @@
                                     <action selector="segmentCtrlClicked:" destination="2" eventType="valueChanged" id="F6g-Dj-MW2"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j25-NV-Igj">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="lBR-1x-2ic"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0u-yL-OSl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXM-lE-cgV">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV4-8i-g3l">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="KE8-Sl-iIW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeZ-i2-hVn">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNo-BI-X2G">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="kln-Yc-BX9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="blA-Y6-RfN"/>
+                                    <constraint firstAttribute="width" constant="250" id="rtT-Nm-zDs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ca8-sh-L2t" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="0kn-XG-cKo"/>
+                            <constraint firstItem="AeZ-i2-hVn" firstAttribute="trailing" secondItem="fV4-8i-g3l" secondAttribute="trailing" type="default" id="5eg-y6-au7"/>
+                            <constraint firstItem="j25-NV-Igj" firstAttribute="top" secondItem="5" secondAttribute="top" constant="11" id="86S-cs-Rqs"/>
                             <constraint firstItem="xk9-zA-Qml" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="9Z1-9w-irG"/>
+                            <constraint firstItem="fV4-8i-g3l" firstAttribute="baseline" secondItem="j25-NV-Igj" secondAttribute="baseline" type="default" id="AfG-Rl-95e"/>
+                            <constraint firstItem="j25-NV-Igj" firstAttribute="trailing" secondItem="b0u-yL-OSl" secondAttribute="trailing" type="default" id="C85-fn-CVN"/>
+                            <constraint firstItem="ca8-sh-L2t" firstAttribute="top" secondItem="GXM-lE-cgV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Dco-o2-Mk2"/>
+                            <constraint firstItem="b0u-yL-OSl" firstAttribute="trailing" secondItem="GXM-lE-cgV" secondAttribute="trailing" type="default" id="Dsl-8x-hgV"/>
                             <constraint firstItem="ca8-sh-L2t" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="Eie-nh-INi"/>
+                            <constraint firstItem="b0u-yL-OSl" firstAttribute="top" secondItem="5" secondAttribute="top" constant="45" id="Er5-Hv-ZYn"/>
+                            <constraint firstItem="j25-NV-Igj" firstAttribute="leading" secondItem="b0u-yL-OSl" secondAttribute="leading" type="default" id="FNG-Ls-hf4"/>
                             <constraint firstItem="xk9-zA-Qml" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="H6I-71-M80"/>
+                            <constraint firstItem="GXM-lE-cgV" firstAttribute="top" secondItem="5" secondAttribute="top" constant="82" id="HcX-cE-wnJ"/>
+                            <constraint firstItem="AeZ-i2-hVn" firstAttribute="leading" secondItem="JNo-BI-X2G" secondAttribute="leading" type="default" id="JNF-xs-AfY"/>
+                            <constraint firstItem="JNo-BI-X2G" firstAttribute="baseline" secondItem="GXM-lE-cgV" secondAttribute="baseline" type="default" id="LZJ-OS-4jZ"/>
+                            <constraint firstItem="kln-Yc-BX9" firstAttribute="top" secondItem="5" secondAttribute="top" constant="30" id="PB6-bj-l2s"/>
+                            <constraint firstItem="j25-NV-Igj" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="32" id="VuE-rg-9e1"/>
+                            <constraint firstItem="AeZ-i2-hVn" firstAttribute="baseline" secondItem="b0u-yL-OSl" secondAttribute="baseline" type="default" id="Wcq-Tx-V4A"/>
                             <constraint firstItem="ca8-sh-L2t" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="bt5-a9-uNt"/>
+                            <constraint firstAttribute="trailing" secondItem="kln-Yc-BX9" secondAttribute="trailing" constant="8" id="dhf-je-ptm"/>
+                            <constraint firstItem="GXM-lE-cgV" firstAttribute="leading" secondItem="b0u-yL-OSl" secondAttribute="leading" type="default" id="oRu-VW-E5L"/>
+                            <constraint firstItem="fV4-8i-g3l" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="298" id="rts-2I-StL"/>
+                            <constraint firstItem="AeZ-i2-hVn" firstAttribute="leading" secondItem="fV4-8i-g3l" secondAttribute="leading" type="default" id="tnJ-67-EtT"/>
+                            <constraint firstItem="AeZ-i2-hVn" firstAttribute="trailing" secondItem="JNo-BI-X2G" secondAttribute="trailing" type="default" id="vtv-V4-FGj"/>
                             <constraint firstItem="xk9-zA-Qml" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="zdE-dQ-ViK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hg5-Pq-wwH"/>
                     <connections>
+                        <outlet property="availableSpaceLbl" destination="JNo-BI-X2G" id="kVr-gh-f28"/>
                         <outlet property="filesTableView" destination="xk9-zA-Qml" id="xSq-bH-9da"/>
+                        <outlet property="lastRevIDLbl" destination="b0u-yL-OSl" id="6cu-WY-Se7"/>
+                        <outlet property="modeLbl" destination="fV4-8i-g3l" id="Mef-Zh-b0f"/>
+                        <outlet property="pendingReqLbl" destination="GXM-lE-cgV" id="AQH-ER-MSf"/>
+                        <outlet property="revIDLbl" destination="j25-NV-Igj" id="0pb-xT-heD"/>
                         <outlet property="segmentCtrl" destination="ca8-sh-L2t" id="fRE-L7-NQF"/>
+                        <outlet property="totalSpaceLbl" destination="kln-Yc-BX9" id="JHa-ZD-f8B"/>
+                        <outlet property="userSpaceLbl" destination="AeZ-i2-hVn" id="uOF-EO-mH3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -386,8 +456,15 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="segmentCtrlClicked:"/>
+                <relationship kind="outlet" name="availableSpaceLbl" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="filesTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="lastRevIDLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="modeLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pendingReqLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="revIDLbl" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="segmentCtrl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="totalSpaceLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userSpaceLbl" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

@@ -61,6 +61,17 @@
     if ([entries count]>0)return [entries objectAtIndex:0];
     else return nil;
 }
+-(GlobalInfo *)globalInfoForEntity:(NSString *)entityName{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:[RootDelegate managedObjectContext]];
+    [request setEntity:entity];
+    request.fetchLimit = 1;
+    NSError *error = nil;
+    NSArray *entries = [[RootDelegate managedObjectContext] executeFetchRequest:request error:&error];
+    if ([entries count])return [entries objectAtIndex:0];
+    else return nil;
+}
+
 -(GlobalInfo *)globalInfoForEntity:(NSString *)entityName andRevID:(NSNumber *)revID{
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:[RootDelegate managedObjectContext]];
@@ -117,6 +128,14 @@
     self.loadCounter = 20;
     self.sharedLoadCounter = 20;
     
+    self.revIDLbl.text = @"";
+    self.lastRevIDLbl.text = @"";
+    self.pendingReqLbl.text = @"";
+    self.modeLbl.text = @"";
+    self.userSpaceLbl.text = @"";
+    self.availableSpaceLbl.text =@"";
+    self.totalSpaceLbl.text = @"";
+    
     self.areMoreFilesAvailable = YES;
     self.areMoreSharedFilesAvailable = YES;
     [self setupFilesTableWithType:MYFILESTYPE];
@@ -135,6 +154,19 @@
     
     BOOL areFilesEmpty = [self isCoreDataEmpty:@"Files" andType:localType];
     if (areFilesEmpty == NO ) {
+        
+        GlobalInfo *globalInfoOb = [self globalInfoForEntity:@"GlobalInfo"];
+        NSLog(@"Saved Global Ob %@",[globalInfoOb revID]);
+        if (globalInfoOb) {
+            self.revIDLbl.text = [NSString stringWithFormat:@"%@",[globalInfoOb revID]];
+            self.lastRevIDLbl.text = [NSString stringWithFormat:@"%@",[globalInfoOb lastRevID]];
+            self.pendingReqLbl.text = [NSString stringWithFormat:@"%@",[globalInfoOb pendingRequests]];
+            self.modeLbl.text = [globalInfoOb mode];
+            self.userSpaceLbl.text = [NSString stringWithFormat:@"%@",[globalInfoOb usedSpace]];
+            self.availableSpaceLbl.text =[NSString stringWithFormat:@"%@",[globalInfoOb availableSpace]];
+            self.totalSpaceLbl.text = [NSString stringWithFormat:@"%@",[globalInfoOb totalSpace]];
+        }
+        
         NSArray *coreDataEntries = [self coreDataEntriesForEntity:@"Files" andType:localType];
         for (Files *fileOb in coreDataEntries) {
             if ([fileType isEqualToString:MYFILESTYPE]) {
@@ -470,9 +502,18 @@
             }
         }
     }
+
+    dispatch_async( dispatch_get_main_queue(), ^{
+        self.lastRevIDLbl.text = [NSString stringWithFormat:@"%@",dict[@"last_rev_id"]];
+        self.availableSpaceLbl.text = [NSString stringWithFormat:@"%@",dict[@"availableSpace"]];
+        self.pendingReqLbl.text = [NSString stringWithFormat:@"%@",dict[@"pendingRequests"]];
+        self.modeLbl.text = dict[@"mode"];
+        self.totalSpaceLbl.text = [NSString stringWithFormat:@"%@",dict[@"totalSpace"]];
+        self.userSpaceLbl.text = [NSString stringWithFormat:@"%@",dict[@"usedSpace"]];
+    });
 }
 
-#pragma mark - 
+#pragma mark -
 #pragma mark - Core Data Create
 
 -(void)createOrUpdateFileWithDict:(NSDictionary *)fDict andType:(NSString *)type andSavedObject:(Files *)addedFile{
